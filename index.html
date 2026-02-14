@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of Shiv Shukla - Software Development Intern, Data Analyst, and AI & ML Enthusiast.">
+    <title>Shiv Shukla | Portfolio</title>
+
+    <!-- SEO & Social Sharing -->
+    <meta property="og:title" content="Shiv Shukla | AI/ML Student & Developer">
+    <meta property="og:description"
+        content="Portfolio of a 3rd Year B.Tech AIML Student. Exploring Data Science, Machine Learning, and Full Stack Development.">
+    <meta property="og:image" content="assets/profile.jpeg">
+    <meta property="og:url" content="https://shivshukla2006.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Pre-loader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="scanner"></div>
+            <p>Initializing AI Core...</p>
+        </div>
+    </div>
+
+    <div class="cursor-glow"></div>
+    <div class="scroll-progress"></div> <!-- Scroll Progress Bar -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <header id="header">
+        <nav class="container">
+            <a href="#" class="logo">Shiv<span class="accent">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn btn-primary small">Contact</a></li>
+                <li class="resume-group">
+                    <a href="assets/resume.pdf" class="btn btn-secondary small icon-only" target="_blank"
+                        title="View CV"><i class="fas fa-eye"></i></a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary small icon-only" download
+                        title="Download CV"><i class="fas fa-download"></i></a>
+                </li> <!-- Resume Buttons -->
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="container">
+            <div class="hero-content">
+                <p class="greeting">Hello, I'm</p>
+                <h1 class="name">Shiv Shukla</h1>
+                <h2 class="role">I am a <span class="typewriter-text"></span><span class="cursor">|</span></h2>
+                <!-- Typewriter -->
+                <p class="summary">
+                    Results-driven Computer Science undergraduate with hands-on experience in full-stack development and
+                    data analytics.
+                    Building scalable web applications and implementing machine learning models for financial analysis.
+                </p>
+                <div class="cta-group">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary" target="_blank"><i class="fas fa-eye"></i>
+                        View CV</a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary" download><i class="fas fa-download"></i>
+                        Download CV</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-wrapper">
+                    <!-- Placeholder for user image interaction -->
+                    <img src="assets/profile.jpeg" alt="Shiv Shukla"
+                        onerror="this.src='https://via.placeholder.com/400x400/121214/3b82f6?text=Shiv+Shukla'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Marquee -->
+        <div class="tech-marquee">
+            <div class="marquee-content">
+                <span><i class="fab fa-python"></i> Python</span>
+                <span><i class="fas fa-layer-group"></i> Django</span>
+                <span><i class="fas fa-database"></i> MySQL</span>
+                <span><i class="fas fa-project-diagram"></i> REST APIs</span>
+                <span><i class="fab fa-react"></i> React</span>
+                <span><i class="fas fa-wind"></i> Tailwind CSS</span>
+                <span><i class="fas fa-brain"></i> Machine Learning</span>
+                <span><i class="fas fa-chart-bar"></i> Power BI</span>
+                <span><i class="fas fa-chart-pie"></i> Tableau</span>
+                <span><i class="fas fa-chart-line"></i> Data Analytics</span>
+                <!-- Duplicate for seamless loop -->
+                <span><i class="fab fa-python"></i> Python</span>
+                <span><i class="fas fa-layer-group"></i> Django</span>
+                <span><i class="fas fa-database"></i> MySQL</span>
+                <span><i class="fas fa-project-diagram"></i> REST APIs</span>
+                <span><i class="fab fa-react"></i> React</span>
+                <span><i class="fas fa-wind"></i> Tailwind CSS</span>
+                <span><i class="fas fa-brain"></i> Machine Learning</span>
+                <span><i class="fas fa-chart-bar"></i> Power BI</span>
+                <span><i class="fas fa-chart-pie"></i> Tableau</span>
+                <span><i class="fas fa-chart-line"></i> Data Analytics</span>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <section id="skills" class="container section-padding">
+            <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <h3>Backend & Programming</h3>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Django</span>
+                        <span>REST APIs</span>
+                        <span>SQL</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="icon-box"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Data & Analytics</h3>
+                    <div class="tags">
+                        <span>Power BI</span>
+                        <span>Tableau</span>
+                        <span>Excel</span>
+                        <span>Google Sheets</span>
+                        <span>R</span>
+                        <span>Statistics</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="icon-box"><i class="fas fa-brain"></i></div>
+                    <h3>Core Strengths</h3>
+                    <div class="tags">
+                        <span>Data Storytelling</span>
+                        <span>Business Acumen</span>
+                        <span>Problem Solving</span>
+                        <span>Collaboration</span>
+                        <span>Communication</span>
+                        <span>Educational Empathy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="container section-padding">
+            <h2 class="section-title">Work <span class="accent">Experience</span></h2>
+            <div class="timeline">
+                <!-- Job 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">June 2025 – August 2025</div>
+                    <div class="timeline-content">
+                        <h3>Software Development Intern</h3>
+                        <h4>Bluestock Fintech (Remote)</h4>
+                        <ul>
+                            <li>Designed and developed a full-stack IPO web application using Django and PostgreSQL.
+                            </li>
+                            <li>Built ML models for financial risk profiling and investment prediction.</li>
+                            <li>Implemented RESTful APIs for investor-focused features.</li>
+                            <li>Improved UI/UX to enhance data accessibility and user engagement.</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Job 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-date">August 2025 – August 2025</div>
+                    <div class="timeline-content">
+                        <h3>Data Analyst Intern</h3>
+                        <h4>Learntrics – Kanpur, Uttar Pradesh</h4>
+                        <ul>
+                            <li>Analyzed student performance data to identify learning gaps.</li>
+                            <li>Designed interactive dashboards using clustering and segmentation.</li>
+                            <li>Built customer segmentation dashboards for personalized learning strategies.</li>
+                            <li>Collaborated with curriculum designers using data-driven insights.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="container section-padding">
+            <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+            <div class="projects-grid">
+                <!-- Project 3 (Moved to Top) -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Farm Advisor – AI-Based Farmer Advisory Platform</h3>
+                        <p>AI-powered advisory platform for data-driven crop planning. Features a responsive UI for
+                            rural accessibility and personalized recommendations.</p>
+                        <div class="tags small">
+                            <span>React</span>
+                            <span>Tailwind CSS</span>
+                            <span>AI/ML APIs</span>
+                            <span>Live</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://farm-advisor-ten.vercel.app/" target="_blank" class="btn-pulse"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>IPO Web Application</h3>
+                        <p>Full-stack web platform for tracking Initial Public Offerings. Built with Django and
+                            PostgreSQL, featuring real-time data updates and investor dashboards.</p>
+                        <div class="tags small">
+                            <span>Django</span>
+                            <span>PostgreSQL</span>
+                            <span>Full Stack</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shivshukla2006?tab=repositories" class="link-disabled"
+                                title="Link coming soon"><i class="fab fa-github"></i>
+                                Code</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Financial Risk ML Model</h3>
+                        <p>Machine learning model designed to analyze financial data for risk profiling and investment
+                            prediction. Utilizes statistical methods for accurate forecasting.</p>
+                        <div class="tags small">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>Data Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shivshukla2006?tab=repositories" class="link-disabled"
+                                title="Link coming soon"><i class="fab fa-github"></i>
+                                Code</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Project 4 (Student Performance - Updated Tools) -->
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Student Performance Dashboard</h3>
+                        <p>Interactive dashboard visualizing student performance metrics. Uses clustering to identify
+                            learning gaps and suggest personalized strategies.</p>
+                        <div class="tags small">
+                            <span>Power BI</span>
+                            <span>SQL</span>
+                            <span>Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/shivshukla2006?tab=repositories" class="link-disabled"
+                                title="Link coming soon"><i class="fab fa-github"></i>
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education" class="container section-padding">
+            <div class="dual-column">
+                <div class="column">
+                    <h2 class="section-title small">Education</h2>
+                    <div class="edu-card">
+                        <h3>B.Tech in Computer Science</h3>
+                        <h4>Allenhouse Institute of Technology, Kanpur</h4>
+                        <p class="subtitle">Artificial Intelligence & Machine Learning</p>
+                        <p class="date">Expected Graduation: May 2027</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <h2 class="section-title small">Certifications</h2>
+                    <ul class="cert-list">
+                        <li>Generative AI – Infosys Springboard</li>
+                        <li>Artificial Intelligence – Infosys Springboard</li>
+                        <li>Google Data Analytics – Google</li>
+                        <li>Microsoft Power BI – Uniathena</li>
+                        <li>Data Analyst – Jobaaj Learnings</li>
+                        <li>GenAI-Powered Data Analytics – Tata</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="achievements-box">
+                <h3>Key Achievements</h3>
+                <div class="achievements-grid">
+                    <div class="achievement">
+                        <i class="fas fa-trophy"></i>
+                        <span>First Prize – Robo Race</span>
+                    </div>
+                    <div class="achievement">
+                        <i class="fas fa-medal"></i>
+                        <span>Third Prize – Robo War</span>
+                    </div>
+                    <div class="achievement">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Hackathon Participant (Guvi, HCL, Tutedude)</span>
+                    </div>
+                    <div class="achievement">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>AKTU AI Tech Confluence 2025</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- GitHub Graph Section -->
+        <section id="github-stats" class="container section-padding">
+            <h2 class="section-title">GitHub <span class="accent">Activity</span></h2>
+            <div class="github-graph-wrapper">
+                <img src="https://ghchart.rshah.org/3b82f6/shivshukla2006" alt="Shiv's GitHub Chart"
+                    class="github-graph">
+                <p class="small-text">Contributions over the last year</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container section-padding">
+            <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+            <div class="contact-wrapper">
+                <p>Have a project in mind or just want to say hi? Feel free to send me a message!</p>
+
+                <form class="contact-form" action="mailto:shivshukla9111@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message <i
+                            class="fas fa-paper-plane"></i></button>
+                </form>
+
+                <div class="contact-links mt-4">
+                    <a href="mailto:shivshukla9111@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i> shivshukla9111@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/shiv-shukla-Ex" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i> LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/shivshukla2006" target="_blank" class="contact-btn">
+                        <i class="fab fa-github"></i> GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Project Details Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Project Title</h2>
+            <div class="modal-body">
+                <p id="modal-description">Project Description...</p>
+                <div class="modal-tech-stack">
+                    <h4>Tech Stack:</h4>
+                    <div id="modal-tags" class="tags small"></div>
+                </div>
+                <!-- AI/ML Specific Metrics -->
+                <div class="modal-metrics">
+                    <h4>Key Metrics:</h4>
+                    <ul id="modal-highlights">
+                        <!-- Dynamic list items -->
+                    </ul>
+                </div>
+                <div class="modal-links">
+                    <a href="#" id="modal-link" target="_blank" class="btn btn-primary small">View Code <i
+                            class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+        <div class="chat-toggle-btn">
+            <i class="fas fa-comment-dots"></i>
+            <span class="notification-badge">1</span>
+        </div>
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <img src="assets/profile.jpeg" alt="Avatar">
+                    <div>
+                        <h4>Shiv's Assistant</h4>
+                        <span class="status-dot"></span> Online
+                    </div>
+                </div>
+                <button class="close-chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages">
+                <div class="message bot">
+                    <p>Hi there! 👋 I'm Shiv's virtual assistant. How can I help you today?</p>
+                </div>
+                <!-- Messages will be added here dynamically -->
+            </div>
+            <div class="chat-input-area">
+                <div class="chat-options">
+                    <button class="chat-option-btn" data-action="projects">View Projects</button>
+                    <button class="chat-option-btn" data-action="resume">Download CV</button>
+                    <button class="chat-option-btn" data-action="contact">Contact Info</button>
+                    <button class="chat-option-btn" data-action="skills">Tech Stack</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 Shiv Shukla. All rights reserved.</p>
+            <p class="small-text">Designed & Built by Shiv Shukla</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
