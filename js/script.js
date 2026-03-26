@@ -374,3 +374,29 @@ window.addEventListener('load', () => {
         preloader.classList.add('fade-out');
     }, 1500); // Minimum 1.5s load time for effect
 });
+
+// Hacker Mode (Konami Code) Logic
+const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+let konamiPosition = 0;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiPosition]) {
+        konamiPosition++;
+        if (konamiPosition === konamiCode.length) {
+            document.body.classList.toggle('hacker-mode');
+            konamiPosition = 0;
+            
+            // Add a small delay for CSS to apply before alerting
+            setTimeout(() => {
+                if (document.body.classList.contains('hacker-mode')) {
+                    alert('HACKER MODE ACTIVATED. Welcome to the Matrix.');
+                } else {
+                    alert('System Restored. Hacker Mode Deactivated.');
+                }
+            }, 100);
+        }
+    } else {
+         // Reset position if sequence is broken
+        konamiPosition = 0;
+    }
+});

@@ -1659,3 +1659,25 @@ footer {
         bottom: 70px;
     }
 }
+
+/* ------------------------------------------
+   HACKER MODE (EASTER EGG)
+---------------------------------------------*/
+body.hacker-mode {
+    background-color: #000 !important;
+    color: #0f0 !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+body.hacker-mode * {
+    color: #0f0 !important;
+    border-color: #0f0 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    text-shadow: 0 0 5px #0f0 !important;
+}
+
+body.hacker-mode .bg-orb,
+body.hacker-mode .cursor-glow {
+    display: none !important;
+}
