@@ -379,12 +379,56 @@ window.addEventListener('load', () => {
 const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 let konamiPosition = 0;
 
+let hackerAudioCtx = null;
+let hackerOscillator = null;
+let hackerGain = null;
+let hackerSirenInterval = null;
+
+function startSiren() {
+    if (!hackerAudioCtx) {
+        hackerAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    hackerOscillator = hackerAudioCtx.createOscillator();
+    hackerGain = hackerAudioCtx.createGain();
+    hackerOscillator.type = 'square';
+    hackerGain.gain.value = 0.05; // Keep volume relatively low
+    hackerOscillator.connect(hackerGain);
+    hackerGain.connect(hackerAudioCtx.destination);
+    hackerOscillator.start();
+
+    let high = true;
+    hackerSirenInterval = setInterval(() => {
+        if (hackerAudioCtx && hackerAudioCtx.state === 'running') {
+            hackerOscillator.frequency.setTargetAtTime(high ? 800 : 400, hackerAudioCtx.currentTime, 0.1);
+        }
+        high = !high;
+    }, 400); // Toggle frequency every 400ms for a siren alarm effect
+}
+
+function stopSiren() {
+    if (hackerSirenInterval) clearInterval(hackerSirenInterval);
+    if (hackerOscillator) {
+        try { hackerOscillator.stop(); } catch (e) {}
+        hackerOscillator.disconnect();
+    }
+    if (hackerAudioCtx && hackerAudioCtx.state !== 'closed') {
+        hackerAudioCtx.close();
+        hackerAudioCtx = null;
+    }
+}
+
 document.addEventListener('keydown', (e) => {
     if (e.key === konamiCode[konamiPosition]) {
         konamiPosition++;
         if (konamiPosition === konamiCode.length) {
             document.body.classList.toggle('hacker-mode');
             konamiPosition = 0;
+            
+            if (document.body.classList.contains('hacker-mode')) {
+                startSiren();
+            } else {
+                stopSiren();
+            }
             
             // Add a small delay for CSS to apply before alerting
             setTimeout(() => {
