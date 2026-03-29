@@ -444,3 +444,121 @@ document.addEventListener('keydown', (e) => {
         konamiPosition = 0;
     }
 });
+
+// ----------------------------------------------------
+// Interactive Terminal Emulator Logic
+// ----------------------------------------------------
+const terminalInput = document.getElementById('terminal-input');
+const terminalOutput = document.getElementById('terminal-output');
+const terminalBody = document.getElementById('terminal-body');
+
+if (terminalInput) {
+    terminalInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            const command = this.value.trim();
+            if (command) {
+                processCommand(command);
+            }
+            this.value = '';
+        }
+    });
+}
+
+function scrollToBottom() {
+    if (terminalBody) {
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+}
+
+function appendToTerminal(htmlContent, isCommand = false) {
+    const div = document.createElement('div');
+    if (isCommand) {
+        div.innerHTML = `<span class="prompt">guest@shiv-portfolio:~$</span> ${htmlContent}`;
+    } else {
+        div.innerHTML = htmlContent;
+    }
+    terminalOutput.appendChild(div);
+    scrollToBottom();
+}
+
+function processCommand(cmd) {
+    // Echo the command
+    appendToTerminal(`<span class="highlight-cmd">${cmd}</span>`, true);
+    
+    const lowerCmd = cmd.toLowerCase();
+    
+    switch (lowerCmd) {
+        case 'help':
+            typeWriterEffect(`Available commands:
+  <span class="highlight-cmd">whoami</span>     - Display a short bio
+  <span class="highlight-cmd">skills</span>     - List my technical skills
+  <span class="highlight-cmd">projects</span>   - View featured projects
+  <span class="highlight-cmd">experience</span> - See my work history
+  <span class="highlight-cmd">contact</span>    - Show contact information
+  <span class="highlight-cmd">clear</span>      - Clear terminal output
+  <span class="highlight-cmd">sudo</span>       - Execute command as superuser`, 10);
+            break;
+        case 'whoami':
+            typeWriterEffect(`guest
+            
+<span class="info">Hi, I'm Shiv Shukla!</span>
+I am a Results-driven Computer Science undergraduate with hands-on experience in full-stack development and data analytics.
+Building scalable web applications and implementing machine learning models for financial analysis.`, 15);
+            break;
+        case 'skills':
+            typeWriterEffect(`<span class="info">[Backend & Programming]</span>: Python, Django, REST APIs, SQL, PostgreSQL
+<span class="info">[Data & Analytics]</span>: Power BI, Tableau, Excel, Google Sheets, R, Statistics
+<span class="info">[Core Strengths]</span>: Data Storytelling, Problem Solving, Collaboration`, 15);
+            break;
+        case 'projects':
+            typeWriterEffect(`1. <span class="success">Farm Advisor</span> - AI-Based Farmer Advisory Platform (React, Tailwind, AI/ML APIs)
+2. <span class="success">IPO Web Application</span> - Full-stack tracking platform (Django, PostgreSQL)
+3. <span class="success">Financial Risk ML Model</span> - Data analysis for risk profiling (Python, ML)
+4. <span class="success">Student Performance Dashboard</span> - Visualizing performance metrics (Power BI, SQL)`, 10);
+            break;
+        case 'experience':
+            typeWriterEffect(`- <span class="info">Software Development Intern</span> @ Bluestock Fintech (June 2025 – August 2025)
+- <span class="info">Data Analyst Intern</span> @ Learntrics (August 2025 – August 2025)`, 15);
+            break;
+        case 'contact':
+            typeWriterEffect(`Email: <a href="mailto:shivshukla9111@gmail.com" class="info">shivshukla9111@gmail.com</a>
+LinkedIn: <a href="https://www.linkedin.com/in/shiv-shukla-Ex" target="_blank" class="info">linkedin.com/in/shiv-shukla-Ex</a>
+GitHub: <a href="https://github.com/shivshukla2006" target="_blank" class="info">github.com/shivshukla2006</a>`, 15);
+            break;
+        case 'clear':
+            terminalOutput.innerHTML = '';
+            break;
+        case 'sudo':
+            typeWriterEffect(`<span class="error">guest is not in the sudoers file. This incident will be reported.</span>`, 30);
+            break;
+        default:
+            typeWriterEffect(`<span class="error">Command not found: ${cmd}</span>. Type <span class="highlight-cmd">help</span> for a list of commands.`, 20);
+    }
+}
+
+function typeWriterEffect(htmlText, speed = 20) {
+    const div = document.createElement('div');
+    terminalOutput.appendChild(div);
+    
+    // Ensure we handle HTML tags properly by not typing out the tags themselves character by character.
+    // A simple way is to set innerHTML directly and stagger the visibility, or parse tags.
+    // For simplicity, we'll just set the innerHTML directly for now with a slight delay, 
+    // or we can implement a span-based typewriter for pure text and immediate render for HTML.
+    // To preserve the feel without breaking HTML, let's just use CSS animation or immediate render for rich HTML.
+    
+    // Given the HTML content, full typewriter parsing is complex. 
+    // Let's do a block-reveal typewriter:
+    div.style.opacity = '0';
+    div.innerHTML = htmlText.replace(/\n/g, '<br>');
+    
+    let opacity = 0;
+    const fadeInterval = setInterval(() => {
+        opacity += 0.1;
+        div.style.opacity = opacity;
+        scrollToBottom();
+        if (opacity >= 1) {
+            clearInterval(fadeInterval);
+            scrollToBottom();
+        }
+    }, speed);
+}

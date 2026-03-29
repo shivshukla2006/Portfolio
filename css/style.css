@@ -1661,6 +1661,110 @@ footer {
 }
 
 /* ------------------------------------------
+   INTERACTIVE TERMINAL
+---------------------------------------------*/
+#terminal-section {
+    margin-top: 2rem;
+}
+
+.terminal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #121214;
+    border-radius: 10px;
+    box-shadow: var(--shadow-soft), 0 0 20px rgba(59, 130, 246, 0.2);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-header {
+    background-color: #1c1c1f;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-btn.close { background-color: #ff5f56; }
+.terminal-btn.minimize { background-color: #ffbd2e; }
+.terminal-btn.maximize { background-color: #27c93f; }
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+.terminal-body {
+    padding: 20px;
+    height: 350px;
+    overflow-y: auto;
+    color: #e0e0e0;
+    scroll-behavior: smooth;
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.terminal-output {
+    margin-bottom: 10px;
+}
+
+.terminal-output div {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.terminal-output .system-msg { color: #a0a0a0; }
+.terminal-output .highlight-cmd { color: #8b5cf6; font-weight: bold; }
+.terminal-output .success { color: #27c93f; }
+.terminal-output .error { color: #ff5f56; }
+.terminal-output .info { color: #3b82f6; }
+
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.prompt {
+    color: #27c93f;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#terminal-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    flex: 1;
+    caret-color: #fff;
+}
+
+/* ------------------------------------------
    HACKER MODE (EASTER EGG)
 ---------------------------------------------*/
 body.hacker-mode {
