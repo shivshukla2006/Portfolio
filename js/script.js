@@ -41,38 +41,54 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer for Animations
-const observerOptions = {
-    threshold: 0.1
-};
+// GSAP ScrollTrigger Animations
+gsap.registerPlugin(ScrollTrigger);
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target); // Only animate once
-        }
+document.addEventListener("DOMContentLoaded", () => {
+    // Section Title reveals
+    gsap.utils.toArray('.section-title').forEach(title => {
+        gsap.fromTo(title, 
+            { y: 50, opacity: 0 },
+            { 
+                y: 0, opacity: 1, duration: 1, ease: "power3.out",
+                scrollTrigger: {
+                    trigger: title,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
     });
-}, observerOptions);
 
-// Target elements to animate
-// We group cards by their container to stagger them
-const grids = document.querySelectorAll('.skills-grid, .projects-grid, .timeline');
-
-grids.forEach(grid => {
-    const children = grid.querySelectorAll('.skill-card, .project-card, .timeline-item');
-    children.forEach((child, index) => {
-        child.style.transitionDelay = `${index * 0.15}s`; // Stagger effect: 0s, 0.15s, 0.3s...
-        child.classList.add('hidden-animate'); // Initial hidden state
-        observer.observe(child);
+    // Staggered Cards (Skills & Projects)
+    gsap.utils.toArray('.skills-grid, .projects-grid').forEach(grid => {
+        gsap.fromTo(grid.children, 
+            { y: 60, opacity: 0, scale: 0.95 },
+            { 
+                y: 0, opacity: 1, scale: 1, duration: 0.8, stagger: 0.15, ease: "back.out(1.2)",
+                scrollTrigger: {
+                    trigger: grid,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
     });
-});
 
-// Also animate section titles and hero
-const otherElements = document.querySelectorAll('.hero-content, .section-title, .achievements-box, .edu-card');
-otherElements.forEach(el => {
-    el.classList.add('hidden-animate');
-    observer.observe(el);
+    // Timeline Items
+    gsap.utils.toArray('.timeline-item').forEach(item => {
+        gsap.fromTo(item, 
+            { x: -50, opacity: 0 },
+            { 
+                x: 0, opacity: 1, duration: 0.8, ease: "power2.out",
+                scrollTrigger: {
+                    trigger: item,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    });
 });
 
 // Dynamic 3D Tilt Effect for Cards
